@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div, button {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <button id="child">Click Me</button>
+    </div>
+
+    <script>
+        // Parent event listener
+        document.getElementById("parent").addEventListener("click", () => {
+            alert("Parent Div Clicked - Bubbling Phase");
+        });
+
+        // Child event listener
+        document.getElementById("child").addEventListener("click", () => {
+            alert("Button Clicked - Bubbling Phase");
+        });
+    </script>
+</body>
+</html>

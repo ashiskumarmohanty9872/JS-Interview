@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title> counter App</title>
+        <style>
+            body{
+                text-align: center;
+                margin-top: 50px;
+                font-family: "Poppins" ,sans-serif;
+            }
+            .counter{
+                font-size: 15px;
+                margin: 20px;
+            }
+            .one{
+                font-size: 10px;
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
+                border: 0;
+                outline: 0;
+                background-color: green;
+                border-radius: 20px;
+            }
+            .two{
+                font-size: 10px;
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
+                border: 0;
+                outline: 0;
+                background-color: red;
+                border-radius: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Conuter App</h1>
+        <div class="counter" id="counter">0</div>
+        <button class="one" onclick="increment()">Increment</button>
+        <button  class="two" onclick="decrement()">Decrement</button>
+
+        <script>
+            let count = 0;
+
+            function increment(){
+                count++;
+                document.getElementById("counter").innerText=count
+            }
+            function decrement(){
+                count--;
+                document.getElementById("counter").innerText=count
+            }
+
+        </script>
+    </body>
+</html>

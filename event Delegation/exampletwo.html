@@ -1,0 +1,24 @@
+<ul class="list">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+
+<button class="btn">Add item</button>
+
+<script>
+    const listItems = document.querySelector(".list");
+    const btn = document.querySelector(".btn")
+
+    listItems.addEventListener("click",(e)=>{
+        if(e.target.tagName === "LI"){
+            alert(`You have clicked on ${e.target.innerText}`)
+        }
+    })
+
+    btn.addEventListener("click",()=>{
+        const newItem = document.createElement("li")
+        newItem.textContent = `item ${listItems.children.length + 1}`
+        listItems.appendChild(newItem)
+    })
+</script>

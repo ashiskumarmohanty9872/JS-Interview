@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Coounter App</title>
+        <style>
+            body{
+                font-family: "Poppins" , sans-serif;
+                text-align: center;
+                margin-top: 50px;
+            }
+            .counter{
+                margin:20px;
+                font-size: 15px;
+            }
+            .one{
+                margin: 10px;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background-color: red;
+                font-size: 10px;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+            }
+            .two{
+                margin: 10px;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background-color: green;
+                font-size: 10px;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>counter App</h1>
+        <div class="counter" id="counter">0</div>
+        <button class="one" onclick="increment()">Increment</button>
+        <button class="two" onclick="decrement()">Decrement</button>
+
+        <script>
+            let count= 0;
+            function increment(){
+                count++;
+                document.getElementById("counter").innerHTML= count
+            }
+            function decrement(){
+                count--;
+                document.getElementById("counter").innerHTML= count
+            }
+        </script>
+    </body>
+</html>

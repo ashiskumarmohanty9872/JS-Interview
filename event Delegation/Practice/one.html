@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            button{
+                margin: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button class="item">btn 1</button>
+            <button class="item">btn 2</button>
+            <button class="item">btn 3</button>  
+        </div>
+
+        <button class="btn">Add item</button>
+
+        <script>
+            const div = document.querySelector(".container")
+            
+            div.addEventListener("click",(e)=>{
+                if(e.target.tagName === "BUTTON"){
+                    alert(`You have clicked ${e.target.innerText}`)
+                }
+            })
+
+            const btn= document.querySelector(".btn")
+            btn.addEventListener("click",()=>{
+                const newItem = document.createElement('BUTTON')
+                newItem.innerText = `btn ${div.children.length + 1}`
+                div.appendChild(newItem)
+                
+            })
+        </script>
+        
+    </body>
+</html>

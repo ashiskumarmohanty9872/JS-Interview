@@ -1,0 +1,16 @@
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Draw a rectangle
+  ctx.fillStyle = "blue";
+  ctx.fillRect(50, 50, 150, 100);
+
+  // Draw a circle
+  ctx.beginPath();
+  ctx.arc(300, 100, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+</script>

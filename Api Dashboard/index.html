@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Github user</title>
+        <style>
+            body{
+                margin: 30px;
+                padding: 20px;
+                font-family: "Poppins",sans-serif;
+                text-align: center;
+                background-color: burlywood;
+            }
+            .container{
+                max-width: 500px;
+                margin: auto;
+                padding: 20px;
+                background: white;
+                border-radius: 20px;
+            }
+            #username{
+                width: 80%;
+                margin-bottom:10px ;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+            button{
+                border: 0;
+                outline: 0;
+                cursor: pointer;
+                font-size: 10px;
+                background-color: chartreuse;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 12px;
+            }
+            .profile{
+                margin-top: 20px;
+                text-align: left;
+            }
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Github Dashboard</h2>
+            <input type="text" id="username" placeholder="enter github username">
+            <button onclick="fetchUser()">Search</button>
+            <div class="profile"></div>
+        </div>
+
+        <script>
+            async function fetchUser(){
+                const username = document.querySelector("#username").value
+                const profile = document.querySelector(".profile")
+                if(!username){
+                    alert("Please enter a username")
+                    return
+                }
+
+                const url = `https://api.github.com/users/${username}`
+                try{
+
+                    const response = await fetch(url)
+                    if(!response.ok){
+                        console.error("N/w is not responding");
+                    }
+
+                    const data = await response.json()
+                    profile.innerHTML = `
+                    
+                    <img src="${data.avatar_url}" alt="Profile picture" />
+                    <h3>${data.name || "No Name provided" }</h3>
+                    <p><strong>Bio:</strong>${data.bio || "N/A" }</p>
+                    <p><strong>Location:</strong>${data.location || "N/A" }</p>
+                    <p><strong>email:</strong>${data.email || "N/A" }</p>
+                    <p><strong>followers:</strong>${data.followers || "N/A" }</p>
+                    `
+                    
+                }
+                catch(err){
+                    profile.innerHTML = `<p style="color:red">User not found </p>`
+                }
+            }
+        </script>
+    </body>
+</html>

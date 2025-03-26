@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="item-list">
+        <li style="cursor: pointer;">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+
+      <script>
+        const listItems = document.querySelectorAll("li");
+listItems.forEach((item) => {
+	item.addEventListener("click", () => {
+		item.style.backgroundColor = "blue";
+    item.style.color = "white";
+	});
+});
+      </script>
+</body>
+</html>
